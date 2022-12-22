@@ -32,7 +32,7 @@ urlPrefix: http://www.ecma-international.org/ecma-262/6.0/index.html; spec: ECMA
 
 *This section is non-normative.*
 
-The APIs specified in this specification are used to compress and decompress streams of data. They support "deflate", "deflate-raw" and "gzip" as compression algorithms. They are widely used by web developers.
+The APIs specified in this specification are used to compress and decompress streams of data. They support "brotli", "deflate", "deflate-raw" and "gzip" as compression algorithms. They are widely used by web developers.
 
 # Conformance #  {#conformance}
 
@@ -65,6 +65,11 @@ A stream represents an ordered sequence of chunks. The terms {{ReadableStream}} 
 A <dfn>compression context</dfn> is the internal state maintained by a compression or decompression algorithm. The contents of a <a>compression context</a> depend on the format, algorithm and implementation in use. From the point of view of this specification, it is an opaque object. A <a>compression context</a> is initially in a start state such that it anticipates the first byte of input.
 
 # Supported formats # {#supported-formats}
+
+: `brotli`
+:: "Brotli Compressed Data Format" [[!RFC7932]]
+
+  * Implementations must be "compliant" as described in [[!RFC7932]] section 1.4.
 
 : `deflate`
 :: "ZLIB Compressed Data Format" [[!RFC1950]]
